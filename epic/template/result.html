@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css' %}">
+ <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+ <script src="app.js" defer></script>
+ <title>Verify Tag</title>
+</head>
+<body>
+
+ <div class="container">
+ <form action="verify" id="form">
+
+
+  {% csrf_token %}
+
+        <h1>Tag Found</h1>
+            <table class="table table-striped" border="1">
+                <thead>
+                    <tr>
+                        <th>EpicID</th>
+                        <th>Manufacturer's Name</th>
+                        <th>Manufacture's Registration</th>
+                        <th>Batch No</th>
+                        <th>Month & Year Of Manufacture</th>
+
+                    </tr>
+                </thead>
+
+                <tbody>
+                   {% for epic in epic %}
+                     <tr>
+                        <td>{{ epic.epic }}</td>
+                        <td>{{ epic.manufacturerName}}</td>
+                         <td>{{ epic.manufacturerRegistration}}</td>
+                         <td>{{ epic.batchNo}}</td>
+                         <td>{{ epic.monthYear_manufacture|date:'m/y'}}</td>
+                     </tr>
+                    {% endfor %}
+            </tbody>
+        </table>
+
+     <a href="/"style="text-decoration:none">
+            <button type="button" class="btn btn-success" >Back
+            </button>
+     </a>
+
+
+ </form>
+ </div>
+
+
+
+
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'styles/bootstrap4/popper.js' %}"></script>
+<script src="{% static 'styles/bootstrap4/bootstrap.min.js' %}"></script>
+<script src="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.js' %}"></script>
+<script src="{% static 'plugins/Isotope/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'plugins/scrollTo/jquery.scrollTo.min.js' %}"></script>
+<script src="{% static 'plugins/easing/easing.js' %}"></script>
+<script src="{% static 'plugins/parallax-js-master/parallax.min.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+</body>
+</html>
+
+
