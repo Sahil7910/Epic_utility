@@ -15,12 +15,32 @@ body{
     margin-top:150px;
 }
 
+#homeform{
+    width:400px;
+    margin:20vh auto 0 auto;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    padding:30px;
+    margin-top:150px;
+}
+
 h1{
     text-align: center;
     color:#792099;
 }
 
 #form button{
+    background-color: #792099;
+    color:white;
+    border: 1px solid #792099;
+    border-radius: 5px;
+    padding:10px;
+    margin:20px 0px;
+    cursor:pointer;
+    font-size:20px;
+    width:100%;
+}
+#homeform button{
     background-color: #792099;
     color:white;
     border: 1px solid #792099;
@@ -62,4 +82,8 @@ h1{
 
 .input-group.error input{
     border-color:rgb(206, 67, 67);
+}
+
+.table{
+ width: 100%;
 }
